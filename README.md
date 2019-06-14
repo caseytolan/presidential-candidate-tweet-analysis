@@ -1,2 +1,10 @@
 # presidential-candidate-tweet-analysis
-Analyzing Democratic presidential candidates' tweets to see who's tweeting the most about Trump
+An analysis of Democratic presidential candidate tweets to determine which candidates are tweeting the most about President Trump. Used for data analysis in this San Jose Mercury News article: https://www.mercurynews.com/2019/06/13/california-primary-trump-twitter-presidential-candidates-swalwell/
+
+I downloaded the most recent 3,200 tweets from the twitter accounts of 23 candidates using the Rtweet library, saving them all in CSV's in the output database. The PresTwitterDirectory.csv includes the account names of all the candidates' main campaign accounts.
+
+One candidate, Andrew Yang, tweets so much that at the time I was running this analysis that was not enough for all of his tweets from 2019. So I combined his current tweets with older ones I had previously downloaded and included the full dataset of him and the other candidates in the olderDownloadedTweets database. 
+
+The script then runs an anylsis to determine which candidates tweet the most about Trump, pulling the data from the olderDownloadedTweets. It excludes retweets and only counts for the first five months of 2019. I counted all tweets that included the word "Trump" in the text (including any permutation of the word, such as "Trumpism") or were quote-tweets of something tweeted by the president's accounts, @realDonaldTrump and @POTUS.
+
+The final results of the analysis are in the TweetsAnalysisResults.csv file. 
